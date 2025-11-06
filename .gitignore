@@ -1,0 +1,9 @@
+Library/
+.vs/
+Logs/
+obj/
+UserSettings/
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp.Player.csproj
+ShootFly.sln
