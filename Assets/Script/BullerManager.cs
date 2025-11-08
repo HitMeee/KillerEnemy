@@ -1,23 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BullerManager : MonoBehaviour
+public class BulletManager : MonoBehaviour
 {
+    public SpawnGun bulletData; 
+
+
     public void Init()
     {
 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag=="enemy")
+        if (collision.CompareTag("enemy"))
         {
-            Debug.Log("Hit enemy");
-            GamePlayerController.Instance.GameContaint.ScoreController.AddCount();
+            EnemyBase enemy = collision.GetComponent<EnemyBase>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(bulletData.damage);
+            }
 
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            GamePlayerController.Instance.GameContaint.ScoreController.AddCount();
+            Destroy(gameObject);
         }
     }
 }

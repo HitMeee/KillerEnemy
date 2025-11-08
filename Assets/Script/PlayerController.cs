@@ -2,24 +2,22 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
+    public GameObject gunPrefab;
 
     public void Init()
     {
-
+        
     }
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnBullet();
+            CreateGun();
         }
     }
-
-    public void SpawnBullet()
+    public void CreateGun()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Destroy(bullet, 3f); 
+        GameObject gun = Instantiate(gunPrefab, transform.position, Quaternion.identity);
     }
+
 }

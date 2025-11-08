@@ -12,15 +12,15 @@ public class InputController : MonoBehaviour
 
     void Update()
     {
-        float moveX = 0f;
-        float moveY = 0f;
+        float MoveX = 0f;
+        float MoveY = 0f;
 
-        if (Input.GetKey(KeyCode.A)) moveX = -1f;
-        if (Input.GetKey(KeyCode.D)) moveX = 1f;
-        if (Input.GetKey(KeyCode.W)) moveY = 1f;
-        if (Input.GetKey(KeyCode.S)) moveY = -1f;
+        if (Input.GetKey(KeyCode.W)) MoveY = 1f;
+        if (Input.GetKey(KeyCode.S)) MoveY = -1f;
+        if (Input.GetKey(KeyCode.A)) MoveX = -1f;
+        if (Input.GetKey(KeyCode.D)) MoveX = 1f;
 
-        Vector3 moveDir = new Vector3(moveX, moveY, 0f).normalized;
-        transform.Translate(moveDir * speed * Time.deltaTime);
+        Vector3 movement = new Vector3(MoveX, MoveY, 0f).normalized;
+        transform.position += movement * speed * Time.deltaTime;
     }
 }

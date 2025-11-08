@@ -3,15 +3,14 @@ using TMPro;
 
 public class ScoreController : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;  // Kéo TMP vào đây trong Inspector
-    public int count = 0;              // Số quái đã giết
+    public TextMeshProUGUI scoreText;  
+    public int count = 0;             
     public void Init()
     {
 
     }
     void Start()
     {
-        // Lấy dữ liệu đã lưu, nếu chưa có thì = 0
         count = PlayerPrefs.GetInt("KilledEnemy", 0);
         scoreText.text = "Last Score: " + count;
     }
@@ -19,7 +18,7 @@ public class ScoreController : MonoBehaviour
     public void AddCount()
     {
         count++; // +1 khi giết quái
-        PlayerPrefs.SetInt("KilledEnemy", count); // Lưu lại
+        PlayerPrefs.SetInt("KilledEnemy", count); 
         PlayerPrefs.Save();
 
         // Cập nhật giao diện
