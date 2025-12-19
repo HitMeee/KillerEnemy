@@ -17,11 +17,10 @@ public class ScoreController : MonoBehaviour
 
     public void AddCount()
     {
-        count++; // +1 khi giết quái
+        count++; 
         PlayerPrefs.SetInt("KilledEnemy", count); 
         PlayerPrefs.Save();
 
-        // Cập nhật giao diện
         scoreText.text = "KILLED ENEMY: " + count;
 
     }

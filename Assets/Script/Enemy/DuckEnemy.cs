@@ -12,6 +12,5 @@ public class DuckEnemy : EnemyBase
         if (!isAlive) return;
 
         Debug.Log("🦆 Duck skill (tạm placeholder)");
-        // sau này có thể thêm slow-area hoặc buff
     }
 }

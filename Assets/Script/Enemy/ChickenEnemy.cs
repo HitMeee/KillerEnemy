@@ -7,5 +7,5 @@ public class ChickenEnemy : EnemyBase
         hp = 1;
     }
 
-    // Không có skill
+    
 }
